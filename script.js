@@ -32,3 +32,4 @@ img.style.opacity = "1"
 }
 
 })
+console.log("script working")
