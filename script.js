@@ -10,29 +10,28 @@ const frames = [
 const hand = document.getElementById("hand")
 
 let frame = 0
+let animationFinished = false
 
-function play(){
+window.addEventListener("wheel",(e)=>{
 
-hand.src = frames[frame]
+if(animationFinished) return
+
+if(e.deltaY > 0){
 
 frame++
 
 if(frame < frames.length){
 
-setTimeout(play,120)
+hand.src = frames[frame]
 
 }else{
 
-/* มือหาย */
-
 hand.style.display = "none"
-
-/* ปลดล็อก scroll */
-
 document.body.style.overflow = "auto"
+animationFinished = true
 
 }
 
 }
 
-play()
+})
