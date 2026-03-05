@@ -3,7 +3,7 @@ margin:0;
 font-family:sans-serif;
 }
 
-/* ส่วน animation */
+/* hero animation */
 
 .intro{
 height:200vh;
@@ -17,7 +17,7 @@ position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-font-size:64px;
+font-size:72px;
 z-index:1;
 }
 
@@ -32,13 +32,13 @@ object-fit:contain;
 z-index:2;
 }
 
-/* ช่องว่างหลัง animation */
+/* ช่องว่างเพื่อให้ scroll smooth */
 
 .spacer{
 height:100vh;
 }
 
-/* เนื้อหาหลัง */
+/* เนื้อหา */
 
 .content{
 min-height:100vh;
