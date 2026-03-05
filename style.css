@@ -3,7 +3,7 @@ margin:0;
 font-family:sans-serif;
 }
 
-/* hero animation */
+/* ส่วน animation */
 
 .intro{
 height:200vh;
@@ -32,13 +32,13 @@ object-fit:contain;
 z-index:2;
 }
 
-/* ช่องว่างเพื่อให้ scroll smooth */
+/* ช่องว่างเพิ่มความ smooth */
 
 .spacer{
 height:100vh;
 }
 
-/* เนื้อหา */
+/* เนื้อหาหลัง */
 
 .content{
 min-height:100vh;
