@@ -1,36 +1,25 @@
 const frames = [
-"assets/hand1.png",
-"assets/hand2.png",
-"assets/hand3.png",
-"assets/hand4.png",
-"assets/hand5.png",
-"assets/hand6.png"
-]
+  "assets/hand1.png",
+  "assets/hand2.png",
+  "assets/hand3.png",
+  "assets/hand4.png",
+  "assets/hand5.png",
+  "assets/hand6.png"
+];
 
-const img = document.getElementById("hand")
-const hello = document.querySelector(".hello")
-const intro = document.querySelector(".intro")
+const img = document.getElementById("hand");
+let frame = 0;
 
-window.addEventListener("scroll", () => {
+function playAnimation(){
+  img.src = frames[frame];
+  frame++;
 
-const scrollTop = window.scrollY
-const maxScroll = intro.offsetHeight - window.innerHeight
-
-let progress = scrollTop / maxScroll
-progress = Math.min(Math.max(progress,0),1)
-
-const frameIndex = Math.floor(progress * (frames.length-1))
-
-img.src = frames[frameIndex]
-
-/* ซ่อนมือและ hello ตอน animation จบ */
-
-if(progress > 0.85){
-img.style.opacity = 0
-hello.style.opacity = 0
-}else{
-img.style.opacity = 1
-hello.style.opacity = 1
+  if(frame < frames.length){
+    setTimeout(playAnimation, 120);  // ความเร็ว animation
+  }else{
+    img.style.display = "none";      // มือหาย
+    document.body.style.overflow = "auto";  // ปลดล็อก scroll
+  }
 }
 
-})
+playAnimation();

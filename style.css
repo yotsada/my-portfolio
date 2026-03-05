@@ -1,47 +1,37 @@
 body{
-margin:0;
-font-family:sans-serif;
+  margin:0;
+  overflow:hidden;        /* ล็อกการเลื่อนช่วง animation */
+  font-family:sans-serif;
 }
 
-/* hero animation */
-
-.intro{
-height:200vh;
-position:relative;
+.hero{
+  height:100vh;
+  position:relative;
+  background:#eee;
 }
-
-/* HELLO */
 
 .hello{
-position:sticky;
-top:50vh;
-transform:translateY(-50%);
-text-align:center;
-font-size:72px;
-z-index:1;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-size:72px;
+  z-index:1;
 }
 
-/* มือ */
-
+/* มืออยู่ด้านบนและบัง hello */
 #hand{
-position:sticky;
-top:0;
-width:100vw;
-height:100vh;
-object-fit:contain;
-z-index:2;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  object-fit:contain;
+  z-index:2;
 }
-
-/* ช่องว่างเพื่อ smooth */
-
-.spacer{
-height:100vh;
-}
-
-/* เนื้อหา */
 
 .content{
-min-height:100vh;
-padding:80px;
-background:white;
+  min-height:100vh;
+  padding:80px;
+  background:white;
 }
