@@ -1,36 +1,36 @@
 body{
-margin:0;
-overflow:hidden;
-font-family:sans-serif;
+  margin:0;
+  overflow:hidden;
+  font-family:sans-serif;
 }
 
 .hero{
-height:100vh;
-position:relative;
-background:#eee;
+  height:100vh;
+  position:relative;
+  background:#eee;
 }
 
 .hello{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-font-size:72px;
-z-index:1;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-size:72px;
+  z-index:1;
 }
 
 #hand{
-position:absolute;
-top:0;
-left:0;
-width:100vw;
-height:100vh;
-object-fit:contain;
-z-index:2;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  object-fit:contain;
+  z-index:2;
 }
 
 .content{
-min-height:200vh;
-padding:80px;
-background:white;
+  min-height:200vh;
+  padding:80px;
+  background:white;
 }

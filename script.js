@@ -1,37 +1,33 @@
 const frames = [
-"assets/hand1.png",
-"assets/hand2.png",
-"assets/hand3.png",
-"assets/hand4.png",
-"assets/hand5.png",
-"assets/hand6.png"
-]
+  "assets/hand1.png",
+  "assets/hand2.png",
+  "assets/hand3.png",
+  "assets/hand4.png",
+  "assets/hand5.png",
+  "assets/hand6.png"
+];
 
-const hand = document.getElementById("hand")
+const hand = document.getElementById("hand");
 
-let frame = 0
-let animationFinished = false
+let progress = 0;
+let finished = false;
 
 window.addEventListener("wheel",(e)=>{
 
-if(animationFinished) return
+  if(finished) return;
 
-if(e.deltaY > 0){
+  progress += e.deltaY * 0.001;
 
-frame++
+  progress = Math.max(0, Math.min(1, progress));
 
-if(frame < frames.length){
+  const frameIndex = Math.floor(progress * (frames.length - 1));
 
-hand.src = frames[frame]
+  hand.src = frames[frameIndex];
 
-}else{
+  if(progress >= 1){
+    hand.style.display = "none";
+    document.body.style.overflow = "auto";
+    finished = true;
+  }
 
-hand.style.display = "none"
-document.body.style.overflow = "auto"
-animationFinished = true
-
-}
-
-}
-
-})
+});
