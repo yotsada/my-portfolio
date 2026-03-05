@@ -3,15 +3,17 @@ margin:0;
 font-family:sans-serif;
 }
 
+/* ส่วน animation */
+
 .intro{
 height:200vh;
 position:relative;
 }
 
-/* HELLO อยู่ตรงกลาง */
+/* HELLO */
 
 .hello{
-position:fixed;
+position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
@@ -30,9 +32,16 @@ object-fit:contain;
 z-index:2;
 }
 
-/* เนื้อหา */
+/* ช่องว่างหลัง animation */
+
+.spacer{
+height:100vh;
+}
+
+/* เนื้อหาหลัง */
 
 .content{
 min-height:100vh;
 padding:80px;
+background:white;
 }
