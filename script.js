@@ -3,7 +3,8 @@ const frames = [
 "assets/hand2.png",
 "assets/hand3.png",
 "assets/hand4.png",
-"assets/hand5.png"
+"assets/hand5.png",
+"assets/hand6.png"
 ]
 
 const img = document.getElementById("hand")
