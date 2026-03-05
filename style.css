@@ -1,20 +1,41 @@
 body{
 margin:0;
+font-family:sans-serif;
 }
+
+/* section animation */
 
 .intro{
 height:200vh;
+position:relative;
 }
+
+/* มือ */
 
 #hand{
 position:sticky;
 top:0;
 width:100vw;
 height:100vh;
-object-fit:cover;
+object-fit:contain;
+display:block;
 }
+
+/* hello ใต้มือ */
+
+.hello{
+position:absolute;
+bottom:40px;
+width:100%;
+text-align:center;
+font-size:48px;
+font-weight:bold;
+}
+
+/* เนื้อหาหลัง animation */
 
 .content{
 min-height:100vh;
-padding:40px;
+padding:80px;
+background:white;
 }
