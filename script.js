@@ -70,11 +70,18 @@ touchStart = touchY
 const button = document.querySelector(".myButton")
 
 button.addEventListener("mouseenter",()=>{
-    hand.style.top = "40%"
-    hand.style.right= "35%"
+
+const rect = button.getBoundingClientRect()
+
+hand.style.display = "block"
+
+hand.style.left = rect.left + rect.width/2 + "px"
+hand.style.top = rect.top + rect.height/2 + "px"
+
 })
 
 button.addEventListener("mouseleave",()=>{
-    hand.style.top = "20%"
-    hand.style.right = "-300px"
+
+hand.style.display = "none"
+
 })
