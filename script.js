@@ -67,21 +67,24 @@ touchStart = touchY
 
 /* สำหรับชี้ปุ่ม */
 
+window.addEventListener("DOMContentLoaded",()=>{
+
 const button = document.querySelector(".myButton")
+const hand = document.getElementById("handPoint")
 
 button.addEventListener("mouseenter",()=>{
 
 const rect = button.getBoundingClientRect()
 
-hand.style.display = "block"
-
-hand.style.left = rect.left + rect.width/2 + "px"
 hand.style.top = rect.top + rect.height/2 + "px"
+hand.style.left = rect.left + rect.width + 20 + "px"
 
 })
 
 button.addEventListener("mouseleave",()=>{
 
-hand.style.display = "none"
+hand.style.left = "120%"
+
+})
 
 })
