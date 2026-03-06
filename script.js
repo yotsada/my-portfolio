@@ -1,33 +1,66 @@
 const frames = [
-  "assets/hand1.png",
-  "assets/hand2.png",
-  "assets/hand3.png",
-  "assets/hand4.png",
-  "assets/hand5.png",
-  "assets/hand6.png"
-];
+"assets/hand1.png",
+"assets/hand2.png",
+"assets/hand3.png",
+"assets/hand4.png",
+"assets/hand5.png",
+"assets/hand6.png"
+]
 
-const hand = document.getElementById("hand");
+const hand = document.getElementById("hand")
 
-let progress = 0;
-let finished = false;
+let progress = 0
+let finished = false
+let touchStart = 0
+
+function updateFrame(){
+
+const frameIndex = Math.floor(progress * (frames.length-1))
+hand.src = frames[frameIndex]
+
+if(progress >= 1){
+hand.style.display = "none"
+document.body.style.overflow = "auto"
+finished = true
+}
+
+}
+
+/* scroll สำหรับคอม */
 
 window.addEventListener("wheel",(e)=>{
 
-  if(finished) return;
+if(finished) return
 
-  progress += e.deltaY * 0.001;
+progress += e.deltaY * 0.002
 
-  progress = Math.max(0, Math.min(1, progress));
+progress = Math.max(0,Math.min(1,progress))
 
-  const frameIndex = Math.floor(progress * (frames.length - 1));
+updateFrame()
 
-  hand.src = frames[frameIndex];
+})
 
-  if(progress >= 1){
-    hand.style.display = "none";
-    document.body.style.overflow = "auto";
-    finished = true;
-  }
+/* touch สำหรับมือถือ */
 
-});
+window.addEventListener("touchstart",(e)=>{
+
+touchStart = e.touches[0].clientY
+
+})
+
+window.addEventListener("touchmove",(e)=>{
+
+if(finished) return
+
+const touchY = e.touches[0].clientY
+const delta = touchStart - touchY
+
+progress += delta * 0.003
+
+progress = Math.max(0,Math.min(1,progress))
+
+updateFrame()
+
+touchStart = touchY
+
+})
