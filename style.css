@@ -25,12 +25,16 @@ body{
   left:0;
   width:100vw;
   height:100vh;
-  object-fit:contain;
-  z-index:2;
+  object-fit:cover;
 }
 
 .content{
   min-height:200vh;
   padding:80px;
   background:white;
+}
+
+.button{
+  position: relative;
+  text-align: center;
 }
