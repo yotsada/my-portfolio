@@ -64,3 +64,17 @@ updateFrame()
 touchStart = touchY
 
 })
+
+/* สำหรับชี้ปุ่ม */
+
+const button = document.querySelector(".myButton")
+
+button.addEventListener("mouseenter",()=>{
+    hand.style.top = "40%"
+    hand.style.right= "35%"
+})
+
+button.addEventListener("mouseleave",()=>{
+    hand.style.top = "20%"
+    hand.style.right = "-300px"
+})

@@ -36,7 +36,24 @@ z-index:1;
   background:white;
 }
 
-.button{
+.section{
   position: relative;
-  text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.myButton{
+  padding: 10px 20px;
+  font-size: 18px;
+}
+
+#handPoint{
+  position: absolute;
+  top: 20%;
+  right: -300%;
+  width: 400px;
+  transition: all 0.5s ease;
 }
