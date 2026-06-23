@@ -1,1 +1,46 @@
+name: Deploy to GitHub Pages
+
+# ทำงานทุกครั้งที่ push ขึ้น branch master
+on:
+  push:
+    branches:
+      - master
+
+# สิทธิ์ที่จำเป็นสำหรับการ deploy ไปยัง GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# ป้องกันการ deploy ซ้อนกัน ถ้ามี deploy อยู่แล้วจะรอให้เสร็จก่อน
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      # ดึงโค้ดจาก repository
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # เตรียมค่าสำหรับ GitHub Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # อัปโหลดไฟล์ทั้งหมดในโฟลเดอร์ปัจจุบัน (.)
+      # ถ้าไฟล์อยู่ใน subfolder เช่น dist/ หรือ public/ ให้เปลี่ยน path ตรงนี้
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      # Deploy ขึ้น GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 
