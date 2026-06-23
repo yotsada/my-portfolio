@@ -1,0 +1,22 @@
+ ชื่อโปรเจก: DailyWorkout — Personal Workout Planner
+https://dailyworkout.vercel.app/
+https://github.com/yotsada/dailyworkout
+
+  ประเภท: Full-Stack Web Application
+
+  เทคโนโลยีหลัก:
+  - Backend: NestJS, Prisma ORM, PostgreSQL (Supabase)
+  - Frontend: Next.js 14 (App Router), Tailwind CSS, TypeScript
+  - Auth: JWT, Google OAuth 2.0 (google-auth-library)
+  - Deploy: Render (backend), Vercel (frontend)
+
+  ---
+  สิ่งที่ทำในโปรเจกนี้:
+
+  - ออกแบบและพัฒนา REST API ครบวงจร ครอบคลุม auth, profile, exercise library, equipment, workout logs
+  - สร้างระบบ Authentication ด้วย username/password (bcrypt + JWT) และ Google Sign-In
+  - ออกแบบ Database Schema ที่ยืดหยุ่น รองรับ workout profile หลายโปรไฟล์ต่อ user, schedule รายวัน, set/rep แบบ count และ
+  time-based
+  - พัฒนา UI ฝั่ง frontend แบบ mobile-first ด้วย Next.js App Router + useReducer state machine สำหรับ active workout session
+  - Seed exercise library 873 ท่าจาก open-source dataset (free-exercise-db) พร้อม image CDN
+  - Deploy ระบบจริงบน cloud (Render + Vercel)

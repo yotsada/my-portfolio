@@ -1,0 +1,16 @@
+โปรเจกนี้คือ  Frontend ระบบ ERP (Enterprise Resource Planning) สำหรับธุรกิจ พัฒนาด้วย:
+
+  Tech Stack:
+  - Frontend: Next.js 16, TypeScript, Tailwind CSS 4
+  - Backend: Express 5, TypeScript
+  - Database (planned): PostgreSQL + Prisma
+
+  โมดูลที่มี:
+  - Sales — คำสั่งซื้อจากลูกค้า
+  - Purchase — การจัดซื้อ / GRN
+  - Inventory — คลังสินค้า
+  - Accounting — บัญชี
+  - HR — พนักงาน, เวลาทำงาน, ลา, เงินเดือน
+  - CRM — ลูกค้า, leads
+  - Reports — รายงาน
+  - Settings — ตั้งค่าระบบ
