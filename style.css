@@ -343,6 +343,25 @@ strong { font-weight: 700; }
   color: #FFFFFF;
 }
 
+.tag-practice {
+  background: #f5f0e8;
+  border: 1.5px solid #c9a84c;
+  color: #7a5a1a;
+  font-weight: 600;
+}
+
+.tag-doc {
+  background: #eef4ff;
+  border: 1.5px solid #4a7fd4;
+  color: #1a4a8a;
+  font-weight: 600;
+}
+
+.tag-doc:hover {
+  background: #4a7fd4;
+  color: #ffffff;
+}
+
 /* ============================================================
    Skills
    ============================================================ */
